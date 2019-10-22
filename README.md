@@ -10,4 +10,4 @@
 
 ---
 
-[DAY 1 - JavaScript Drum Kit](https://github.com/TravelTimN/javascript30/blob/master/javascript30-day01/README.md)
+[DAY 1 - JavaScript Drum Kit](https://github.com/TravelTimN/javascript30/blob/master/day-01/README.md)

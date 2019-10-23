@@ -12,6 +12,8 @@
 
 *No Frameworks* - *No Compilers* - *No Libraries* - *No Boilerplate*
 
+[View All Projects](https://github.com/TravelTimN/javascript30/blob/master/README.md)
+
 ---
 
 ## Credits

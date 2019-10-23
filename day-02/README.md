@@ -1,6 +1,6 @@
 # [JavaScript30](https://javascript30.com/)
 
-## **Day 2** - *CSS + JS Clock*
+## **Day 02** - *CSS + JS Clock*
 
 ![CSS + JS Clock](final.png?raw=true "CSS + JS Clock")
 

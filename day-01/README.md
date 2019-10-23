@@ -1,6 +1,6 @@
 # [JavaScript30](https://javascript30.com/)
 
-## **Day 1** - *JavaScript Drum Kit*
+## **Day 01** - *JavaScript Drum Kit*
 
 ![JavaScript Drum Kit](final.png?raw=true "JavaScript Drum Kit")
 

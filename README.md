@@ -11,3 +11,5 @@
 ---
 
 [DAY 1 - JavaScript Drum Kit](https://github.com/TravelTimN/javascript30/blob/master/day-01/README.md)
+
+[DAY 2 - CSS + JS Clock](https://github.com/TravelTimN/javascript30/blob/master/day-02/README.md)

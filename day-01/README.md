@@ -2,6 +2,8 @@
 
 ## **Day 1** - *JavaScript Drum Kit*
 
+![JavaScript Drum Kit](final.png?raw=true "JavaScript Drum Kit")
+
 ---
 
 ### **30 Day Vanilla JS Coding Challenge**

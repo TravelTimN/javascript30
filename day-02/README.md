@@ -12,4 +12,4 @@
 
 *No Frameworks* - *No Compilers* - *No Libraries* - *No Boilerplate*
 
-[View All Projects](https://github.com/TravelTimN/javascript30/blob/master/README.md)
+[<< Previous #01](https://github.com/TravelTimN/javascript30/blob/master/day-01/README.md) | [All Projects](https://github.com/TravelTimN/javascript30/blob/master/README.md) | [Next #03 >>](https://github.com/TravelTimN/javascript30/blob/master/day-03/README.md)

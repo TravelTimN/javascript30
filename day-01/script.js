@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function() {
     // function buildHtml () {
     //     const sounds = [
     //         {sound: "clap", key: "a", data: "65"},
@@ -39,4 +39,4 @@ window.onload = function () {
     keys.forEach(key => key.addEventListener("transitionend", removeTransition));
 
     window.addEventListener("keydown", playSound);
-};
+});

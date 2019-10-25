@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function() {
     // update picture with random Lorem Picsum image
     const btn = this.document.getElementById("button");
     btn.addEventListener("click", pictureUpdate);
@@ -20,4 +20,4 @@ window.onload = function () {
     // trigger changes on 'change' and 'slider'
     inputs.forEach(input => input.addEventListener("change", handleUpdate));
     inputs.forEach(input => input.addEventListener("mousemove", handleUpdate));
-};
+});

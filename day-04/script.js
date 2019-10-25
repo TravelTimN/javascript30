@@ -17,9 +17,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const people = ["Beck, Glenn", "Becker, Carl", "Beckett, Samuel", "Beddoes, Mick", "Beecher, Henry", "Beethoven, Ludwig", "Begin, Menachem", "Belloc, Hilaire", "Bellow, Saul", "Benchley, Robert", "Benenson, Peter", "Ben-Gurion, David", "Benjamin, Walter", "Benn, Tony", "Bennington, Chester", "Benson, Leana", "Bent, Silas", "Bentsen, Lloyd", "Berger, Ric", "Bergman, Ingmar", "Berio, Luciano", "Berle, Milton", "Berlin, Irving", "Berne, Eric", "Bernhard, Sandra", "Berra, Yogi", "Berry, Halle", "Berry, Wendell", "Bethea, Erin", "Bevan, Aneurin", "Bevel, Ken", "Biden, Joseph", "Bierce, Ambrose", "Biko, Steve", "Billings, Josh", "Biondo, Frank", "Birrell, Augustine", "Black, Elk", "Blair, Robert", "Blair, Tony", "Blake, William"];
     // console.table(people);
 
-    // FILTER the list of inventors for those who were born  in the 1500's
-    const filterDIV = document.getElementById("filter");
+
+    // FILTER the list of inventors for those who were born in the 1500's
     const filterData = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600);
+    const filterDIV = document.getElementById("filter");
     const filterTable = document.createElement("TABLE");
     const filterTRhead = document.createElement("TR");
     const filterTH1 = document.createElement("TH"); filterTH1.innerHTML = "First"; filterTRhead.appendChild(filterTH1);
@@ -37,13 +38,97 @@ document.addEventListener("DOMContentLoaded", function() {
         filterTable.appendChild(filterTRbody);
     });
 
+
     // MAP an array of the inventors' first and last names
-    const fullNames= inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+    const mapData = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
     const mapDIV = document.getElementById("map");
     const mapUL = document.createElement("UL");
-    fullNames.forEach(name => {
+    mapData.forEach(name => {
         const mapLI = document.createElement("LI"); mapLI.innerHTML = name; mapUL.appendChild(mapLI);
     });
     mapDIV.appendChild(mapUL);
+
+
+    // SORT the inventors by birth date, oldest to youngest
+    const sortData = inventors.sort((personOne, personTwo) => personOne.year > personTwo.year ? 1 : -1);
+    const sortDIV = document.getElementById("sort");
+    const sortTable = document.createElement("TABLE");
+    const sortTRhead = document.createElement("TR");
+    const sortTH1 = document.createElement("TH"); sortTH1.innerHTML = "First"; sortTRhead.appendChild(sortTH1);
+    const sortTH2 = document.createElement("TH"); sortTH2.innerHTML = "Last"; sortTRhead.appendChild(sortTH2);
+    const sortTH3 = document.createElement("TH"); sortTH3.innerHTML = "Birth"; sortTRhead.appendChild(sortTH3);
+    const sortTH4 = document.createElement("TH"); sortTH4.innerHTML = "Death"; sortTRhead.appendChild(sortTH4);
+    sortTable.appendChild(sortTRhead);
+    sortDIV.appendChild(sortTable);
+    sortData.forEach(info => {
+        const sortTRbody = document.createElement("TR");
+        const sortTD1 = document.createElement("TD"); sortTD1.innerHTML = info.first; sortTRbody.appendChild(sortTD1);
+        const sortTD2 = document.createElement("TD"); sortTD2.innerHTML = info.last; sortTRbody.appendChild(sortTD2);
+        const sortTD3 = document.createElement("TD"); sortTD3.innerHTML = info.year; sortTRbody.appendChild(sortTD3);
+        const sortTD4 = document.createElement("TD"); sortTD4.innerHTML = info.passed; sortTRbody.appendChild(sortTD4);
+        sortTable.appendChild(sortTRbody);
+    });
+
+
+    // REDUCE how many years did all of the inventors live?
+    const reduceData = inventors.reduce((total, inventor) => {
+        return total + (inventor.passed - inventor.year);
+    }, 0);
+    const span = document.createElement("SPAN");
+    span.classList.add("number");
+    const reduceDIV = document.getElementById("reduce");
+    span.innerHTML = reduceData + " years";
+    reduceDIV.appendChild(span);
+
+
+    // SORT the inventors by years lived
+    const sortOldest = inventors.sort((personOne, personTwo) => {
+        const personA = personOne.passed - personOne.year;
+        const personB = personTwo.passed - personTwo.year;
+        return personA > personB ? -1 : 1;
+    });
+    const sortOldestDIV = document.getElementById("sortOldest");
+    const sortOldestTable = document.createElement("TABLE");
+    const sortOldestTRhead = document.createElement("TR");
+    const sortOldestTH1 = document.createElement("TH"); sortOldestTH1.innerHTML = "First"; sortOldestTRhead.appendChild(sortOldestTH1);
+    const sortOldestTH2 = document.createElement("TH"); sortOldestTH2.innerHTML = "Last"; sortOldestTRhead.appendChild(sortOldestTH2);
+    const sortOldestTH3 = document.createElement("TH"); sortOldestTH3.innerHTML = "Birth"; sortOldestTRhead.appendChild(sortOldestTH3);
+    const sortOldestTH4 = document.createElement("TH"); sortOldestTH4.innerHTML = "Death"; sortOldestTRhead.appendChild(sortOldestTH4);
+    const sortOldestTH5 = document.createElement("TH"); sortOldestTH5.innerHTML = "Age"; sortOldestTRhead.appendChild(sortOldestTH5);
+    sortOldestTable.appendChild(sortOldestTRhead);
+    sortOldestDIV.appendChild(sortOldestTable);
+    sortOldest.forEach(info => {
+        const sortOldestTRbody = document.createElement("TR");
+        const sortOldestTD1 = document.createElement("TD"); sortOldestTD1.innerHTML = info.first; sortOldestTRbody.appendChild(sortOldestTD1);
+        const sortOldestTD2 = document.createElement("TD"); sortOldestTD2.innerHTML = info.last; sortOldestTRbody.appendChild(sortOldestTD2);
+        const sortOldestTD3 = document.createElement("TD"); sortOldestTD3.innerHTML = info.year; sortOldestTRbody.appendChild(sortOldestTD3);
+        const sortOldestTD4 = document.createElement("TD"); sortOldestTD4.innerHTML = info.passed; sortOldestTRbody.appendChild(sortOldestTD4);
+        const sortOldestTD5 = document.createElement("TD"); sortOldestTD5.innerHTML = info.passed - info.year; sortOldestTRbody.appendChild(sortOldestTD5);
+        sortOldestTable.appendChild(sortOldestTRbody);
+    });
+
+
+    // MAP + FILTER create a list of Boulevards in Paris that contain 'de' anywhere in the name
+    // only practice in DevTools on the following website:
+    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    // const category = document.querySelector(".mw-category");
+    // const links = Array.from(category.querySelectorAll("a")); // VERSION 1: create an array
+    // const links = [...category.querySelectorAll("a")]; // VERSION 2: create an array using the spread syntax
+    // const de = links.map(link => link.textContent).filter(streetName => streetName.includes("de"));
+
+
+    // SORT the people alphabetically by last name
+    const sortAlpha = people.sort((personOne, personTwo) => {
+        const [personOneLast, personOneFirst] = personOne.split(", "); // destructuring variables
+        const [personTwoLast, personTwoFirst] = personTwo.split(", "); // destructuring variables
+        return personOneLast > personTwoLast ? 1 : -1; // sorts alphabetically
+        // return personOneLast > personTwoLast ? -1 : 1; // sorts alphabetically reversed
+    });
+    const sortAlphaDIV = document.getElementById("sortAlpha");
+    const sortAlphaUL = document.createElement("UL");
+    sortAlpha.forEach(name => {
+        const sortAlphaLI = document.createElement("LI"); sortAlphaLI.innerHTML = name; sortAlphaUL.appendChild(sortAlphaLI);
+    });
+    sortAlphaDIV.appendChild(sortAlphaUL);
 
 });

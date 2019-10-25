@@ -1,11 +1,10 @@
-* {margin: 0; padding: 0;}
-body {margin: 1em;}
-hr {margin: 1em;}
-
-h3 {color: red; font-weight: normal;}
-table {text-align: center; background-color: #ccc; margin: 0.5em;}
-table * {padding: 0.5em;}
-th {background-color: #ccc;}
-tr {background-color: #f0f0ff;}
-ul {columns: 3; margin: 0.5em;}
-ul li {list-style: none; padding: 0.5em; border: 3px solid #ccc; background-color: #f0f0ff; margin: 0.5em;}
+*:not(strong) {font-weight: normal; list-style: none; padding: 0; text-align: center; box-sizing: border-box;}
+body, hr {margin: 1em;}
+h3 {color: red;}
+table, ul li, .number {margin: 0.5em;}
+table *, ul li, .number {padding: 0.5em;}
+table, th {background-color: #ccc;}
+tr, ul li, .number {background-color: #f0f0ff;}
+ul li, .number {border: 3px solid #ccc;}
+ul {columns: 3;}
+th, .number {font-weight: bolder;}

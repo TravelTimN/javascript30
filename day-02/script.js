@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function() {
     // let ticks = document.getElementsByClassName("ticks");
     // let clock = document.querySelector("#clock");
     // for (let i = 1; i < 60; i++) {
@@ -35,4 +35,4 @@ window.onload = function () {
     }
 
     setInterval(setDate, 1000);
-};
+});

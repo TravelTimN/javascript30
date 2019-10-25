@@ -1,0 +1,8 @@
+* {margin: 0; padding: 0;}
+body {margin: 1em;}
+
+h3 {color: red;}
+table {text-align: center; background-color: #ccc; margin: 0.5em;}
+table * {padding: 0.5em;}
+th {background-color: #ccc;}
+tr {background-color: #f0f0ff;}

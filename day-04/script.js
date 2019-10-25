@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
         { first: "Hanna", last: "Hammarström", year: 1829, passed: 1909 }
     ];
     // console.table(inventors);
-    const people = ["Beck, Glenn", "Becker, Carl", "Beckett, Samuel", "Beddoes, Mick", "Beecher, Henry", "Beethoven, Ludwig", "Begin, Menachem", "Belloc, Hilaire", "Bellow, Saul", "Benchley, Robert", "Benenson, Peter", "Ben-Gurion, David", "Benjamin, Walter", "Benn, Tony", "Bennington, Chester", "Benson, Leana", "Bent, Silas", "Bentsen, Lloyd", "Berger, Ric", "Bergman, Ingmar", "Berio, Luciano", "Berle, Milton", "Berlin, Irving", "Berne, Eric", "Bernhard, Sandra", "Berra, Yogi", "Berry, Halle", "Berry, Wendell", "Bethea, Erin", "Bevan, Aneurin", "Bevel, Ken", "Biden, Joseph", "Bierce, Ambrose", "Biko, Steve", "Billings, Josh", "Biondo, Frank", "Birrell, Augustine", "Black, Elk", "Blair, Robert", "Blair, Tony", "Blake, William"];
-    // console.table(people);
 
 
     // FILTER the list of inventors for those who were born in the 1500's
@@ -117,6 +115,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // const de = links.map(link => link.textContent).filter(streetName => streetName.includes("de"));
 
 
+    const people = ["Beck, Glenn", "Becker, Carl", "Beckett, Samuel", "Beddoes, Mick", "Beecher, Henry", "Beethoven, Ludwig", "Begin, Menachem", "Belloc, Hilaire", "Bellow, Saul", "Benchley, Robert", "Benenson, Peter", "Ben-Gurion, David", "Benjamin, Walter", "Benn, Tony", "Bennington, Chester", "Benson, Leana", "Bent, Silas", "Bentsen, Lloyd", "Berger, Ric", "Bergman, Ingmar", "Berio, Luciano", "Berle, Milton", "Berlin, Irving", "Berne, Eric", "Bernhard, Sandra", "Berra, Yogi", "Berry, Halle", "Berry, Wendell", "Bethea, Erin", "Bevan, Aneurin", "Bevel, Ken", "Biden, Joseph", "Bierce, Ambrose", "Biko, Steve", "Billings, Josh", "Biondo, Frank", "Birrell, Augustine", "Black, Elk", "Blair, Robert", "Blair, Tony", "Blake, William"];
+    // console.table(people);
+
+
     // SORT the people alphabetically by last name
     const sortAlpha = people.sort((personOne, personTwo) => {
         const [personOneLast, personOneFirst] = personOne.split(", "); // destructuring variables
@@ -130,5 +132,29 @@ document.addEventListener("DOMContentLoaded", function() {
         const sortAlphaLI = document.createElement("LI"); sortAlphaLI.innerHTML = name; sortAlphaUL.appendChild(sortAlphaLI);
     });
     sortAlphaDIV.appendChild(sortAlphaUL);
+
+
+    // REDUCE and sum up the instances of each of the items in this array
+    const transportation = ["car", "car", "truck", "truck", "bike", "walk", "car", "van", "bike", "walk", "car", "van", "car", "truck"];
+    const transport = transportation.reduce((obj, item) => {
+        if (!obj[item]) {
+            obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+    }, {});
+    const reduceSumDIV = document.getElementById("reduceSum");
+    const reduceSumTable = document.createElement("TABLE");
+    const reduceSumTRhead = document.createElement("TR");
+    const reduceSumTH1 = document.createElement("TH"); reduceSumTH1.innerHTML = "Transport"; reduceSumTRhead.appendChild(reduceSumTH1);
+    const reduceSumTH2 = document.createElement("TH"); reduceSumTH2.innerHTML = "Count"; reduceSumTRhead.appendChild(reduceSumTH2);
+    reduceSumTable.appendChild(reduceSumTRhead);
+    reduceSumDIV.appendChild(reduceSumTable);
+    Object.keys(transport).forEach((mode) => {
+        const reduceSumTRbody = document.createElement("TR");
+        const reduceSumTD1 = document.createElement("TD"); reduceSumTD1.innerHTML = mode; reduceSumTRbody.appendChild(reduceSumTD1);
+        const reduceSumTD2 = document.createElement("TD"); reduceSumTD2.innerHTML = transport[mode]; reduceSumTRbody.appendChild(reduceSumTD2);
+        reduceSumTable.appendChild(reduceSumTRbody);
+    });
 
 });

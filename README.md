@@ -17,3 +17,5 @@
 [DAY 03 - Playing with CSS Variables and JS](https://github.com/TravelTimN/javascript30/blob/master/day-03/README.md)
 
 [DAY 04 - Array Cardio Day 1](https://github.com/TravelTimN/javascript30/blob/master/day-04/README.md)
+
+[DAY 05 - Flex Panels Image Gallery](https://github.com/TravelTimN/javascript30/blob/master/day-05/README.md)

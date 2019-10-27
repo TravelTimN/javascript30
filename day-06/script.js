@@ -1,4 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     // data source
     const source = "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
@@ -22,31 +22,35 @@
     }
 
     // replace numbers with appropriate commas
-    function numberWithCommas(n){
+    function numberWithCommas(n) {
         return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
     // display matches mapped to <ul> creating <li> for each result
     function displayMatches() {
         const matchArray = findMatches(this.value, cities);
+        const count = document.getElementById("count");
         const results = document.querySelector(".results");
         const html = matchArray.map(place => {
-            //
+            // replace searched value with span of same value that is highlighted
             const regex = new RegExp(this.value, "gi"); // g = global | i = insensitive
             const cityName = place.city.replace(regex, `<span class="highlight">${this.value}</span>`);
             const stateName = place.state.replace(regex, `<span class="highlight">${this.value}</span>`);
-            return `
+            if (this.value) {
+                return `
                 <li>
                     <span class="name">${cityName}, ${stateName}</span>
                     <span class="population">${numberWithCommas(place.population)}</span>
                 </li>
             `;
+            }
         }).join(""); // .join("") will turn the array into one big string instead of an array of items
         results.innerHTML = html;
+        count.innerHTML = matchArray.length;
     }
 
     // perform action based on 'keyup' event
     const searchInput = document.querySelector(".search");
     searchInput.addEventListener("keyup", displayMatches);
 
-// });
+});

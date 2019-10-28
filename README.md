@@ -21,3 +21,5 @@
 [DAY 05 - Flex Panels Image Gallery](https://github.com/TravelTimN/javascript30/blob/master/day-05/README.md)
 
 [DAY 06 - Ajax Type Ahead](https://github.com/TravelTimN/javascript30/blob/master/day-06/README.md)
+
+[DAY 07 - Array Cardio Day 2](https://github.com/TravelTimN/javascript30/blob/master/day-07/README.md)

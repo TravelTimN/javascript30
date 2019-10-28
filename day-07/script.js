@@ -9,6 +9,36 @@ document.addEventListener("DOMContentLoaded", function() {
         {name: "Baby", year: 2010}
     ];
 
+    //----- SOME()
+    // Array.prototype.some() // is at least one person 19?
+
+    // version 1
+    const isAdult = people.some((person) => {
+        const currentYear = new Date().getFullYear();
+        return currentYear - person.year >= 19;
+    });
+    console.log({isAdult});
+    // version 2 (shorthand / implicit return)
+    const isAdultAlt = people.some((person) => new Date().getFullYear() - person.year >= 19);
+    console.log({isAdultAlt});
+
+
+    //----- EVERY()
+    // Array.prototype.every() // is everyone 19?
+
+    // version 1
+    const allAdults = people.every((person) => {
+        const currentYear = new Date().getFullYear();
+        return currentYear - person.year >= 19;
+    });
+    console.log({allAdults});
+    // version 2 (shorthand / implicit return)
+    const allAdultsAlt = people.every((person) => new Date().getFullYear() - person.year >= 19);
+    console.log({allAdultsAlt});
+
+
+
+
     const comments = [
         {text: "Love this!", id: 523423},
         {text: "Super good", id: 823423},
@@ -17,19 +47,47 @@ document.addEventListener("DOMContentLoaded", function() {
         {text: "Nice Nice Nice!", id: 542328},
     ];
 
-    // Array.prototype.some() // is at least one person 19?
-    // Array.prototype.every() // is everyone 19?
 
+    //----- FIND()
+    // find is like .filter() but returns just the one you are looking for
+    // .find() the comment with the ID of 823423
     // version 1
-    const isAdult = people.some((person) => {
-        const currentYear = new Date().getFullYear();
-        return currentYear - person.year >= 19;
+    const comment = comments.find((comment) => {
+        if (comment.id === 823423) {
+            return true;
+        }
     });
-    // version 2 (shorthand / implicit return)
-    const isAdultAlt = people.some((person) => new Date().getFullYear() - person.year >= 19);
+    console.log(comment);
+    // version 2 (implicit return)
+    const commentAlt = comments.find((comment) => comment.id === 523423);
+    console.log(commentAlt);
 
-    
-    console.log({isAdult})
-    console.log({isAdultAlt})
+
+    //----- FINDINDEX()
+    // find the comment with this 123523
+    // delete the comment with the ID of 123523
+    // version 1
+    const index = comments.findIndex((comment) => {
+        if (comment.id === 123523) {
+            return true;
+        }
+    });
+    console.log(index);
+    // version 2 (implicit return)
+    const indexAlt = comments.findIndex((comment) => comment.id === 123523);
+    console.log(indexAlt);
+
+
+
+    //----- DELETE item
+    // delete the comment with the ID of 2039842
+    // version 1 using SPLICE
+    const indexSplice = comments.findIndex((comment) => comment.id === 2039842);
+    comments.splice(indexSplice, 1);
+    console.table(comments);
+    // version 2 using new array similar to redux method
+    const indexNewArr = comments.findIndex((comment) => comment.id === 123523);
+    const newArr = [...comments.slice(0, indexNewArr), ...comments.slice(indexNewArr + 1)]; // ...spread syntax
+    console.table(newArr);
 
 });

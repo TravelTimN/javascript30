@@ -23,3 +23,5 @@
 [DAY 06 - Ajax Type Ahead](https://github.com/TravelTimN/javascript30/blob/master/day-06/README.md)
 
 [DAY 07 - Array Cardio Day 2](https://github.com/TravelTimN/javascript30/blob/master/day-07/README.md)
+
+[DAY 08 - Fun with HTML5 Canvas](https://github.com/TravelTimN/javascript30/blob/master/day-08/README.md)

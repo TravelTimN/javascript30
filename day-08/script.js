@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const canvas = document.querySelector("#canvas");
-    const cntxt = canvas.getContext("2d");
+    const canvas = document.querySelector("canvas");
+    const canvasContext = canvas.getContext("2d");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    cntxt.strokeStyle = "#d56627";
-    cntxt.lineJoin = "round";
-    cntxt.lineCap = "round";
-    cntxt.lineWidth = 1;
-    // cntxt.globalCompositeOperation = "multiply";
+    canvasContext.lineJoin = "round";
+    canvasContext.lineCap = "round";
+    // canvasContext.strokeStyle = "#000000"; // initial stroke color (overridden below)
+    // canvasContext.lineWidth = 1; // initial line width (overridden below)
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation
+    // canvasContext.globalCompositeOperation = "color";
 
     let isDrawing = false;
     let direction = true;
@@ -15,25 +17,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function draw(e) {
         if (!isDrawing) return; // stop function when not moused-down
-        cntxt.strokeStyle = `hsl(${hue}, 100%, 50%)`;
-        cntxt.beginPath();
-        cntxt.moveTo(lastX, lastY);
-        cntxt.lineTo(e.offsetX, e.offsetY);
-        cntxt.stroke();
-        [lastX, lastY] = [e.offsetX, e.offsetY];
-        hue++;
-        if (hue >= 360) {
-            hue = 0;
-        }
-        if (cntxt.lineWidth >= 100 || cntxt.lineWidth <= 1) {
-            direction = !direction;
-        }
-        if (direction) {
-            cntxt.lineWidth++;
-        } else {
-            cntxt.lineWidth--;
-        }
-        // cntxt.lineWidth(direction ? cntxt.lineWidth++ : cntxt.lineWidth--);
+        canvasContext.strokeStyle = `hsl(${hue}, 100%, 50%)`; // set stroke color to HSL
+        canvasContext.beginPath(); // begin drawing path
+        canvasContext.moveTo(lastX, lastY); // end drawing path
+        canvasContext.lineTo(e.offsetX, e.offsetY); // connect points from moveTo to lineTo
+        canvasContext.stroke(); // add stroke line of path
+        [lastX, lastY] = [e.offsetX, e.offsetY]; // reset last X/Y to recent offsets
+        hue++; // increment HSL hue by 1 each time
+        if (hue >= 360) {hue = 0;} // once hue is 360, reset to 0
+        if (canvasContext.lineWidth >= 100 || canvasContext.lineWidth <= 1) {direction = !direction;} // swap true/false
+        if (direction) {canvasContext.lineWidth++;} else {canvasContext.lineWidth--;} // increment and decrement accordingly
     }
 
     canvas.addEventListener("mousemove", draw);
@@ -41,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.addEventListener("mouseout", () => isDrawing = false);
     canvas.addEventListener("mousedown", (e) => {
         isDrawing = true;
-        [lastX, lastY] = [e.offsetX, e.offsetY];
+        [lastX, lastY] = [e.offsetX, e.offsetY]; // reset last X/Y to recent offsets
     });
 
 });

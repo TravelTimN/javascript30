@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const canvas = document.querySelector("canvas");
-    const canvasContext = canvas.getContext("2d");
+    const canvasContext = canvas.getContext("2d"); // can't draw on canvas, only canvas context
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     canvasContext.lineJoin = "round";

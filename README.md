@@ -25,3 +25,5 @@
 [DAY 07 - Array Cardio Day 2](https://github.com/TravelTimN/javascript30/blob/master/day-07/README.md)
 
 [DAY 08 - Fun with HTML5 Canvas](https://github.com/TravelTimN/javascript30/blob/master/day-08/README.md)
+
+[DAY 09 - 14 Must Know Dev Tools Tricks](https://github.com/TravelTimN/javascript30/blob/master/day-09/README.md)

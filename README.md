@@ -27,3 +27,5 @@
 [DAY 08 - Fun with HTML5 Canvas](https://github.com/TravelTimN/javascript30/blob/master/day-08/README.md)
 
 [DAY 09 - 14 Must Know Dev Tools Tricks](https://github.com/TravelTimN/javascript30/blob/master/day-09/README.md)
+
+[DAY 10 - Hold Shift to Check Multiple Checkboxes](https://github.com/TravelTimN/javascript30/blob/master/day-10/README.md)

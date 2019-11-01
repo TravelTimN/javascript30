@@ -29,3 +29,5 @@
 [DAY 09 - 14 Must Know Dev Tools Tricks](https://github.com/TravelTimN/javascript30/blob/master/day-09/README.md)
 
 [DAY 10 - Hold Shift to Check Multiple Checkboxes](https://github.com/TravelTimN/javascript30/blob/master/day-10/README.md)
+
+[DAY 11 - Custom HTML5 Video Player](https://github.com/TravelTimN/javascript30/blob/master/day-10/README.md)

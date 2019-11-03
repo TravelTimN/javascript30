@@ -11,8 +11,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const toggle = player.querySelector(".toggle");
     const skipButtons = player.querySelectorAll("[data-skip]");
     const skipBackwards = player.querySelector(".backwards");
-    const skipFowards = player.querySelector(".forwards");
+    const skipForwards = player.querySelector(".forwards");
     const ranges = player.querySelectorAll(".player-slider");
+    const volume = document.getElementById("volumeSpan");
+    const speed = document.getElementById("speedSpan");
+    const full = document.querySelector(".fullscreen");
 
 
 
@@ -20,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         * building the functions
     */
 
+    // toggle between Play/Pause
     function togglePlay() {
         // if video is paused, toggle play and vice versa
         const method = video.paused ? "play": "pause";
@@ -27,49 +31,64 @@ document.addEventListener("DOMContentLoaded", function() {
         
     }
 
+    // update between Play/Pause buttons
     function updateButton() {
         const icon = this.paused ? "►" : "❚ ❚";
         toggle.textContent = icon;
     }
 
+    // skip video based on dataset value
     function skip() {
         video.currentTime += parseFloat(this.dataset.skip);
     }
 
+    // skip backwards (based on keyCode 'J')
     function skipBack() {
         video.currentTime += parseFloat(skipBackwards.dataset.skip);
     }
 
+    // skip forwards (based on keyCode 'L')
     function skipFwd() {
-        video.currentTime += parseFloat(skipFowards.dataset.skip);
+        video.currentTime += parseFloat(skipForwards.dataset.skip);
     }
 
-    // function fullScreen() {
-        
-    //     const method = video.requestFullscreen() ? cancelFullscreen(): requestFullscreen();
-    //     video[method]();
-    // }
-    function fullScreen() {
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) {
-            video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullscreen) {
-            video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) {
-            video.msRequestFullscreen();
+    // toggle fullscreen (either keyCode 'F' or button)
+    var handleFullscreen = () => {
+        if (isFullScreen()) {
+            if (document.exitFullscreen) document.exitFullscreen();
+            else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+            else if (document.webkitCancelFullScreen) document.webkitCancelFullScreen();
+            else if (document.msExitFullscreen) document.msExitFullscreen();
+        } else {
+            if (video.requestFullscreen) video.requestFullscreen();
+            else if (video.mozRequestFullScreen) video.mozRequestFullScreen();
+            else if (video.webkitRequestFullScreen) video.webkitRequestFullScreen();
+            else if (video.msRequestFullscreen) video.msRequestFullscreen();
         }
     }
 
-    function handleRangeUpdate() {
-        video[this.name] = this.value;
+    var isFullScreen = () => {
+        return !!(document.fullScreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement);
     }
 
+    // slide ranges (speed and volume)
+    function handleRangeUpdate() {
+        video[this.name] = this.value;
+        if (this.name == "volume") {
+            const percent = parseInt(this.value * 100);
+            volume.innerHTML = `${percent}%`;
+        } else if (this.name == "playbackRate") {
+            speed.innerHTML = this.value;
+        }
+    }
+
+    // update progress bar of video duration
     function handleProgress() {
-        const percent = (video.currentTime/ video.duration) * 100;
+        const percent = (video.currentTime / video.duration) * 100;
         progressBar.style.flexBasis = `${percent}%`;
     }
 
+    // scrub video progress bar of duration
     function scrub(e) {
         const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
         video.currentTime = scrubTime;
@@ -90,9 +109,12 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (e.keyCode == 76) {
             skipFwd();
         } else if (e.keyCode == 70) {
-            fullScreen();
+            handleFullscreen();
         }
     }
+
+    //
+    full.addEventListener("click", handleFullscreen);
 
     // video
     video.addEventListener("click", togglePlay);

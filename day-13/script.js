@@ -42,6 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // call checkSlide but only after debouncing with 50ms delay overridden
-    window.addEventListener("scroll", debounce(checkSlide, 100));
+    window.addEventListener("scroll", debounce(checkSlide, 50));
 
 });

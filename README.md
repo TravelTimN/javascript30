@@ -35,3 +35,5 @@
 [DAY 12 - Key Sequence Detection - KONAMI CODE](https://github.com/TravelTimN/javascript30/blob/master/day-12/README.md)
 
 [DAY 13 - Slide-In on Scroll](https://github.com/TravelTimN/javascript30/blob/master/day-13/README.md)
+
+[DAY 14 - Object and Arrays - Reference VS Copy](https://github.com/TravelTimN/javascript30/blob/master/day-14/README.md)

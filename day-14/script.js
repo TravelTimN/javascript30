@@ -63,29 +63,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // The same thing goes for objects, let's say we have a person object
-
-
     // with Objects
-
-
     const person = {
         name: 'Wes Bos',
         age: 80
     };
-
-
     // and think we make a copy:
-
-
+    const captain = person;
+    captain.number = 99;
+    console.log(person);
     // how do we take a copy instead?
-
+    const cap2 = Object.assign({}, person, {number: 98, age: 12});
+    console.log(cap2);
 
     // We will hopefully soon see the object ...spread
-
-
+    // EDIT: this is working! video must be outdated
+    const cap3 = {...person};
+    console.log(cap3);
     // Things to note - this is only 1 level deep - both for Arrays and Objects.
     // lodash has a cloneDeep method, but you should think twice before using it.
 
-
+    const tim = {
+        name: "Tim",
+        age: 35,
+        social: {
+            slack: "tim_ci",
+            linkedin: "travel-tim-nelson"
+        }
+    }
+    console.log(tim);
+    // make a copy of 'tim' Object
+    const dev = Object.assign({}, tim);
+    dev.name = "Chris";
+    dev.age = 36;
+    //////////// dev.social.slack = "2bn-chris";
+    //////////// dev.social.linkedin = "c-quinn";
+    // doing this will cause 'tim' social objects to update as well
+    // because it can only go 1 level deep... nothing within social
+    // you would need to 'clone deep'/'deep clone' to fix this problem
+    console.log(dev);
+    // another way aside from deep cloning, doesn't affect tim.social
+    // JSON.stringify(tim) this turns it into a string though, no longer an object
+    // but adding JSON.part(...) will turn it back into an Object
+    // no insight on performance with this, but is a hacky way of achieving this
+    const dev2 = JSON.parse(JSON.stringify(tim));
+    dev2.name = "Chris";
+    dev2.age = 36;
+    dev2.social.slack = "2bn-chris";
+    dev2.social.linkedin = "c-quinn";
+    console.log(dev2);
 
 });

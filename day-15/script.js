@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const addItems = document.querySelector(".add-items");
     const itemsList = document.querySelector(".plates");
+    const all = document.querySelector("#all");
+    const none = document.querySelector("#none");
+    const clear = document.querySelector("#clear");
     const items = JSON.parse(localStorage.getItem("items")) || []; // existing localStorage items, or blank []
 
 
@@ -41,8 +44,38 @@ document.addEventListener("DOMContentLoaded", function () {
         populateList(items, itemsList); // visually update the checkbox
     }
 
+    function selectAll() {
+        if (localStorage.getItem("items")) {
+            items.forEach((item) => {
+                item.done = true; // for each item, set 'done' to true
+                localStorage.setItem("items", JSON.stringify(items)); // update localStorage as such
+                populateList(items, itemsList); // visually update the checkbox
+            });
+        }
+    }
+
+    function deselectAll() {
+        if (localStorage.getItem("items")) {
+            items.forEach((item) => {
+                item.done = false; // for each item, set 'done' to false
+                localStorage.setItem("items", JSON.stringify(items)); // update localStorage as such
+                populateList(items, itemsList); // visually update the checkbox
+            });
+        }
+    }
+
+    function clearList() {
+        itemsList.innerHTML = ""; // reset .plates to original
+        localStorage.clear("items"); // remove from localStorage
+        localStorage.removeItem("items"); // remove from localStorage
+        items.length = 0; // reset items[] back to empty array
+    }
+
     addItems.addEventListener("submit", addItem); // on 'submit', add value of input
     itemsList.addEventListener("click", toggleDone); // on 'click', toggle checkbox
     populateList(items, itemsList); // build list of <li> elements from localStorage or new items
+    all.addEventListener("click", selectAll); // select all checkboxes
+    none.addEventListener("click", deselectAll); // deselect all checkboxes
+    clear.addEventListener("click", clearList); // clear entire list of items
 
 });

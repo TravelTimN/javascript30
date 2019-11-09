@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    background: url("http://wes.io/hx9M/oh-la-la.jpg") center no-repeat;
+    background: url("bg.jpg") center no-repeat;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -18,7 +18,7 @@ svg {
     padding: 20px;
     border-radius: 50%;
     width: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .wrapper {
@@ -74,4 +74,10 @@ h2 {
     padding: 10px;
     outline: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.add-items input:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
 }

@@ -37,3 +37,5 @@
 [DAY 13 - Slide-In on Scroll](https://github.com/TravelTimN/javascript30/blob/master/day-13/README.md)
 
 [DAY 14 - Object and Arrays - Reference VS Copy](https://github.com/TravelTimN/javascript30/blob/master/day-14/README.md)
+
+[DAY 15 - LocalStorage and Event Delegation](https://github.com/TravelTimN/javascript30/blob/master/day-14/README.md)

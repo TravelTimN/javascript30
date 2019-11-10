@@ -1,8 +1,8 @@
 html {
     color: black;
-    font-family: sans-serif;
-    background-color: #1f70bb;
-    font-family: "Helvetica Neue";
+    /* background-color: #1f70bb; */
+    background-color: black;
+    font-family: "Helvetica", sans-serif;
 }
 
 body {margin: 0;}
@@ -12,7 +12,7 @@ body {margin: 0;}
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: white;
 }
 
 h1 {

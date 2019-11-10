@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const hero = document.querySelector(".hero");
     const text = document.querySelector("h1");
-    const walk = 100; // 100px
+    const walk = 25; // 25px
 
     function shadow(e) {
         // const width = hero.offsetWidth;

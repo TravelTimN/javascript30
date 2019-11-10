@@ -39,3 +39,5 @@
 [DAY 14 - Object and Arrays - Reference VS Copy](https://github.com/TravelTimN/javascript30/blob/master/day-14/README.md)
 
 [DAY 15 - LocalStorage and Event Delegation](https://github.com/TravelTimN/javascript30/blob/master/day-15/README.md)
+
+[DAY 16 - CSS Text Shadow Mouse Move Effect](https://github.com/TravelTimN/javascript30/blob/master/day-16/README.md)

@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    font-family: "Helvetica";
+    background: url("bg.png") bottom center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#bands {
+    list-style: inside circle;
+    font-size: 20px;
+    line-height: 0;
+    background: rgba(255, 255, 255, 0.75);
+    width: 500px;
+    margin: auto;
+    padding: 0;
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+#bands li {border-bottom: 5px solid rgba(0, 0, 0, 0.05); padding: 20px; transition: all 0.25s ease-in-out;}
+#bands li:last-child {border-bottom: 0;}
+#bands li:hover {background-color: white;}

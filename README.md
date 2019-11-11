@@ -41,3 +41,5 @@
 [DAY 15 - LocalStorage and Event Delegation](https://github.com/TravelTimN/javascript30/blob/master/day-15/README.md)
 
 [DAY 16 - CSS Text Shadow Mouse Move Effect](https://github.com/TravelTimN/javascript30/blob/master/day-16/README.md)
+
+[DAY 17 - Sorting Band Names without articles](https://github.com/TravelTimN/javascript30/blob/master/day-17/README.md)

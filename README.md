@@ -43,3 +43,5 @@
 [DAY 16 - CSS Text Shadow Mouse Move Effect](https://github.com/TravelTimN/javascript30/blob/master/day-16/README.md)
 
 [DAY 17 - Sorting Band Names without articles](https://github.com/TravelTimN/javascript30/blob/master/day-17/README.md)
+
+[DAY 18 - Tally String Times with Reduce](https://github.com/TravelTimN/javascript30/blob/master/day-18/README.md)

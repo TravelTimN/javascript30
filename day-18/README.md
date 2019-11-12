@@ -13,11 +13,3 @@
 *No Frameworks* - *No Compilers* - *No Libraries* - *No Boilerplate*
 
 [<< Previous #17](https://github.com/TravelTimN/javascript30/blob/master/day-17/README.md) | [All Projects](https://github.com/TravelTimN/javascript30/blob/master/README.md) | [Next #19 >>](https://github.com/TravelTimN/javascript30/blob/master/day-19/README.md)
-
----
-
-## Credits
-
-### Media
-
-- [pixabay.com](https://pixabay.com/photos/concert-crowd-audience-people-768722/) - wallpaper

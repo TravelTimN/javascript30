@@ -4,7 +4,7 @@ html {font-size: 10px; background: #1f70bb;}
 
 .photobooth {
     background: white;
-    max-width: 150rem;
+    /* max-width: 150rem; */
     margin: 2rem auto;
     border-radius: 2px;
 }
@@ -12,7 +12,7 @@ html {font-size: 10px; background: #1f70bb;}
 /* clearfix */
 .photobooth::after {content: ""; display: block; clear: both;}
 
-.photo {width: 100%; float: left;}
+.photo {max-height: 75vh;}
 
 .player {
     position: absolute;

@@ -37,7 +37,7 @@
             // pixels = redEffect(pixels);
 
             // RGB-SPLIT
-            // pixels = rgbSplit(pixels);
+            pixels = rgbSplit(pixels);
             ctx.globalAlpha = 0.1;
 
             // GREEN SCREEN
@@ -45,7 +45,7 @@
 
             // put pixels back
             ctx.putImageData(pixels, 0, 0);
-        }, 50);
+        }, 10);
     }
 
     function takePhoto() {

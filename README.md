@@ -45,3 +45,5 @@
 [DAY 17 - Sorting Band Names without articles](https://github.com/TravelTimN/javascript30/blob/master/day-17/README.md)
 
 [DAY 18 - Tally String Times with Reduce](https://github.com/TravelTimN/javascript30/blob/master/day-18/README.md)
+
+[DAY 19 - Unreal Webcam Fun](https://github.com/TravelTimN/javascript30/blob/master/day-19/README.md)

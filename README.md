@@ -47,3 +47,5 @@
 [DAY 18 - Tally String Times with Reduce](https://github.com/TravelTimN/javascript30/blob/master/day-18/README.md)
 
 [DAY 19 - Unreal Webcam Fun](https://github.com/TravelTimN/javascript30/blob/master/day-19/README.md)
+
+[DAY 20 - Native Speech Recognition](https://github.com/TravelTimN/javascript30/blob/master/day-20/README.md)

@@ -49,3 +49,5 @@
 [DAY 19 - Unreal Webcam Fun](https://github.com/TravelTimN/javascript30/blob/master/day-19/README.md)
 
 [DAY 20 - Native Speech Recognition](https://github.com/TravelTimN/javascript30/blob/master/day-20/README.md)
+
+[DAY 21 - Geolocation based Speedometer and Compass](https://github.com/TravelTimN/javascript30/blob/master/day-21/README.md)

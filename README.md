@@ -1,3 +1,7 @@
+10DEC2020 - Update branch from `master` to `main`.
+
+---
+
 # [JavaScript30](https://javascript30.com/)
 
 ## **30 Day Vanilla JS Coding Challenge**
